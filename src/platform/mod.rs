@@ -600,7 +600,7 @@ mod platform_impl {
     }
 }
 
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(any(target_os = "macos", target_os = "ios", target_os = "visionos"))]
 mod platform_impl {
     pub use crate::host::coreaudio::{
         Device as CoreAudioDevice, Devices as CoreAudioDevices, Host as CoreAudioHost,
@@ -704,6 +704,7 @@ mod platform_impl {
     target_os = "netbsd",
     target_os = "macos",
     target_os = "ios",
+    target_os = "visionos",
     target_os = "emscripten",
     target_os = "android",
     all(target_arch = "wasm32", feature = "wasm-bindgen"),
